@@ -158,9 +158,14 @@ var Proximity = {
 // these reference other properties of Proximity.* so they must be set individually
 Proximity.prop.usingMobileSite = window.location.pathname.indexOf(Proximity.uri.mobileRoot) > -1;
 Proximity.prop.usingFullSite = window.location.pathname.indexOf(Proximity.uri.mobileRoot) == -1;
-Proximity.uri.server = Proximity.uri.host + (Proximity.prop.localDevMode ? ':3000' : '');
+Proximity.uri.server = Proximity.uri.host + (Proximity.prop.localDevMode ? ':3501' : '');
 Proximity.uri.apiServer = Proximity.uri.server + Proximity.uri.apiRoot;
 
+var devLog = function(msg){
+  if(Proximity.prop.localDevMode){
+    console.log(msg);
+  }
+};
 
 /**
  * Device detection and setup - useful on mobile *and* full site

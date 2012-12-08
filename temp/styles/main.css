@@ -4386,8 +4386,8 @@ input[type="submit"].btn.btn-mini {
 /* line 22, ../../app/styles/compass_twitter_bootstrap/_navbar.scss */
 .navbar-inner {
   min-height: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 3px;
+  padding-right: 3px;
   background-color: #fafafa;
   background-image: -moz-linear-gradient(top, white, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
@@ -4419,7 +4419,6 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   float: left;
   display: block;
-  padding: 10px 20px 10px;
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
@@ -4660,9 +4659,9 @@ input[type="submit"].btn.btn-mini {
 .navbar .btn-navbar {
   display: none;
   float: right;
-  padding: 7px 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #ededed;
@@ -6213,53 +6212,64 @@ a.label:hover, a.badge:hover {
     padding-right: 20px;
   }
 
-  /* line 15, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 14, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  .navbar .brand {
+    padding: 14px 20px 16px 110px !important;
+    margin: 5px 0 0 0;
+  }
+  /* line 18, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  .navbar .logo {
+    top: -4px !important;
+    left: -16px !important;
+  }
+
+  /* line 25, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     margin-left: -20px;
     margin-right: -20px;
   }
 
-  /* line 20, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 30, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .container-fluid {
     padding: 0;
   }
 
-  /* line 28, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 38, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .dl-horizontal dt {
     float: none;
     clear: none;
     width: auto;
     text-align: left;
   }
-  /* line 34, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 44, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .dl-horizontal dd {
     margin-left: 0;
   }
 
-  /* line 42, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 52, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .container {
     width: auto;
   }
 
-  /* line 46, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 56, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .row-fluid {
     width: 100%;
   }
 
-  /* line 51, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 61, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .row,
   .thumbnails {
     margin-left: 0;
   }
 
-  /* line 54, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 64, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .thumbnails > li {
     float: none;
     margin-left: 0;
   }
 
-  /* line 60, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 70, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   [class*="span"],
   .row-fluid [class*="span"] {
     float: none;
@@ -6268,7 +6278,7 @@ a.label:hover, a.badge:hover {
     margin-left: 0;
   }
 
-  /* line 67, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 77, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .span12,
   .row-fluid .span12 {
     width: 100%;
@@ -6277,7 +6287,7 @@ a.label:hover, a.badge:hover {
     box-sizing: border-box;
   }
 
-  /* line 81, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 91, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .input-large,
   .input-xlarge,
   .input-xxlarge,
@@ -6293,7 +6303,7 @@ a.label:hover, a.badge:hover {
     box-sizing: border-box;
   }
 
-  /* line 88, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 98, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .input-prepend input,
   .input-append input,
   .input-prepend input[class*="span"],
@@ -6302,7 +6312,7 @@ a.label:hover, a.badge:hover {
     width: auto;
   }
 
-  /* line 94, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 104, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .modal {
     position: fixed;
     top: 20px;
@@ -6311,30 +6321,45 @@ a.label:hover, a.badge:hover {
     width: auto;
     margin: 0;
   }
-  /* line 101, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 111, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .modal.fade.in {
     top: auto;
   }
 }
 @media (max-width: 480px) {
-  /* line 114, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 123, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  .navbar {
+    margin-left: -20px;
+  }
+  /* line 125, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  .navbar .brand {
+    padding: 14px 20px 16px 60px;
+    /* Increase vertical padding to match navbar links */
+  }
+  /* line 128, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  .navbar .logo {
+    top: 2px;
+    left: 2px;
+  }
+
+  /* line 135, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .nav-collapse {
     -webkit-transform: translate3d(0, 0, 0);
   }
 
-  /* line 119, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 140, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .page-header h1 small {
     display: block;
     line-height: 20px;
   }
 
-  /* line 126, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 147, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   input[type="checkbox"],
   input[type="radio"] {
     border: 1px solid #ccc;
   }
 
-  /* line 131, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 152, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .form-horizontal .control-group > label {
     float: none;
     width: auto;
@@ -6342,36 +6367,36 @@ a.label:hover, a.badge:hover {
     text-align: left;
   }
 
-  /* line 138, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 159, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .form-horizontal .controls {
     margin-left: 0;
   }
 
-  /* line 142, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 163, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .form-horizontal .control-list {
     padding-top: 0;
   }
 
-  /* line 146, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 167, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .form-horizontal .form-actions {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  /* line 152, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 173, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .modal {
     top: 10px;
     left: 10px;
     right: 10px;
   }
 
-  /* line 157, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 178, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .modal-header .close {
     padding: 10px;
     margin: -10px;
   }
 
-  /* line 163, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
+  /* line 184, ../../app/styles/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .carousel-caption {
     position: static;
   }
@@ -7315,74 +7340,73 @@ a.label:hover, a.badge:hover {
     padding-top: 0;
   }
 
-  /* line 18, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 17, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  .navbar .brand {
+    padding: 14px 20px 16px 100px;
+    margin: 4px 0 0 0;
+  }
+
+  /* line 25, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     position: static;
   }
 
-  /* line 21, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 28, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-fixed-top {
     margin-bottom: 20px;
   }
 
-  /* line 24, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 31, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-fixed-bottom {
     margin-top: 20px;
   }
 
-  /* line 28, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 35, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-fixed-top .navbar-inner,
   .navbar-fixed-bottom .navbar-inner {
     padding: 5px;
   }
 
-  /* line 31, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 38, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar .container {
     width: auto;
     padding: 0;
   }
 
-  /* line 36, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar .brand {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0 0 0 -5px;
-  }
-
-  /* line 45, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 47, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse {
     clear: both;
   }
 
-  /* line 49, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 51, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav {
     float: none;
     margin: 0 0 10px;
   }
 
-  /* line 53, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 55, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > li {
     float: none;
   }
 
-  /* line 56, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 58, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > li > a {
     margin-bottom: 2px;
   }
 
-  /* line 59, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 61, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > .divider-vertical {
     display: none;
   }
 
-  /* line 62, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 64, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav .nav-header {
     color: #555555;
     text-shadow: none;
   }
 
-  /* line 68, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 70, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > li > a,
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
@@ -7392,7 +7416,7 @@ a.label:hover, a.badge:hover {
     border-radius: 3px;
   }
 
-  /* line 74, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 76, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .btn {
     padding: 4px 10px 4px;
     font-weight: normal;
@@ -7401,30 +7425,30 @@ a.label:hover, a.badge:hover {
     border-radius: 4px;
   }
 
-  /* line 79, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 81, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .dropdown-menu li + li a {
     margin-bottom: 2px;
   }
 
-  /* line 83, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 85, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > li > a:hover,
   .nav-collapse .dropdown-menu a:hover {
     background-color: #f2f2f2;
   }
 
-  /* line 87, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 89, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-inverse .nav-collapse .nav > li > a:hover,
   .navbar-inverse .nav-collapse .dropdown-menu a:hover {
     background-color: #111111;
   }
 
-  /* line 91, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 93, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse.in .btn-group {
     margin-top: 5px;
     padding: 0;
   }
 
-  /* line 96, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 98, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .dropdown-menu {
     position: static;
     top: auto;
@@ -7444,18 +7468,18 @@ a.label:hover, a.badge:hover {
     box-shadow: none;
   }
 
-  /* line 111, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 113, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .dropdown-menu:before,
   .nav-collapse .dropdown-menu:after {
     display: none;
   }
 
-  /* line 114, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 116, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .dropdown-menu .divider {
     display: none;
   }
 
-  /* line 119, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 121, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .navbar-form,
   .nav-collapse .navbar-search {
     float: none;
@@ -7468,32 +7492,32 @@ a.label:hover, a.badge:hover {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 128, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 130, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar .nav-collapse .nav.pull-right {
     float: none;
     margin-left: 0;
   }
 
-  /* line 134, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 136, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse,
   .nav-collapse.collapse {
     overflow: hidden;
     height: 0;
   }
 
-  /* line 139, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 141, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar .btn-navbar {
     display: block;
   }
 
-  /* line 145, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 147, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-static .navbar-inner {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 @media (min-width: 980px) {
-  /* line 160, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
+  /* line 162, ../../app/styles/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse.collapse {
     height: auto !important;
   }
@@ -7552,8 +7576,7 @@ body {
 /* Downsize the brand/project name a bit */
 /* line 46, ../../app/styles/_proximity.scss */
 .navbar .brand {
-  padding: 14px 20px 16px 122px;
-  /* Increase vertical padding to match navbar links */
+  padding: 12px 0 0 130px;
   font-size: 32px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -7565,8 +7588,8 @@ body {
 /* line 55, ../../app/styles/_proximity.scss */
 .navbar .logo {
   position: absolute;
-  top: 15px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   width: 130px;
 }
 
@@ -7579,7 +7602,7 @@ body {
 /* Offset the responsive button for proper vertical alignment */
 /* line 69, ../../app/styles/_proximity.scss */
 .navbar .btn-navbar {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* CUSTOMIZE THE NAVBAR

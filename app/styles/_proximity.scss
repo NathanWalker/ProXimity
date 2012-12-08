@@ -44,7 +44,7 @@ body {
 /* Downsize the brand/project name a bit */
 .navbar {
   .brand {
-    padding: 14px 20px 16px 122px; /* Increase vertical padding to match navbar links */
+    padding:12px 0 0 130px;
     font-size: 32px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
     color: #fff;
@@ -54,8 +54,8 @@ body {
   }
   .logo {
     position:absolute;
-    top:15px;
-    left:5px;
+    top:10px;
+    left:10px;
     width:130px;
   }
 }
@@ -67,7 +67,7 @@ body {
 
 /* Offset the responsive button for proper vertical alignment */
 .navbar .btn-navbar {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* CUSTOMIZE THE NAVBAR

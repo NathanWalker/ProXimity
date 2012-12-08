@@ -10,6 +10,16 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .navbar {
+    .brand {
+      padding: 14px 20px 16px 110px !important;
+      margin: 5px 0 0 0;
+    }
+    .logo {
+      top: -4px !important;
+      left: -16px !important;
+    }
+  }
   // Negative indent the now static "fixed" navbar
   .navbar-fixed-top,
   .navbar-fixed-bottom {
@@ -109,6 +119,17 @@
 // ---------------------
 
 @media (max-width: 480px) {
+
+  .navbar {
+    margin-left: -20px;
+    .brand {
+      padding: 14px 20px 16px 60px; /* Increase vertical padding to match navbar links */
+    }
+    .logo {
+      top: 2px;
+      left: 2px;
+    }
+  }
 
   // Smooth out the collapsing/expanding nav
   .nav-collapse {

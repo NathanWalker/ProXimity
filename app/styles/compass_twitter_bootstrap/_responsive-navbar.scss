@@ -13,6 +13,13 @@
   body {
     padding-top: 0;
   }
+  .navbar {
+    .brand {
+      padding: 14px 20px 16px 100px;
+      margin: 4px 0 0 0;
+    }
+  }
+
   // Unfix the navbar
   .navbar-fixed-top,
   .navbar-fixed-bottom {
@@ -32,12 +39,7 @@
     width: auto;
     padding: 0;
   }
-  // Account for brand name
-  .navbar .brand {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0 0 0 -5px;
-  }
+
 
   // COLLAPSIBLE NAVBAR
   // ------------------
