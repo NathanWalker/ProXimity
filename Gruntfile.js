@@ -1,5 +1,6 @@
-module.exports = function( grunt ) {
+module.exports = function(grunt) {
   'use strict';
+  grunt.loadNpmTasks('grunt-recess');
   //
   // Grunt configuration:
   //
@@ -12,29 +13,24 @@ module.exports = function( grunt ) {
 
     // specify an alternate install location for Bower
     bower: {
-      dir: 'app/components'
+      dir: 'app/js/vendor'
     },
 
     // Coffee to JS compilation
     coffee: {
-      compile: {
-        files: {
-          'app/scripts/*.js': 'app/scripts/**/*.coffee',
-          'test/spec/*.js': 'test/spec/**/*.coffee'
-        }
+      dist: {
+        src: 'app/js/**/*.coffee',
+        dest: 'app/js'
       }
     },
 
-    // compile .scss/.sass to .css using Compass
-    compass: {
+    // compile .less to .css using Recess
+    recess: {
       dist: {
-        // http://compass-style.org/help/tutorials/configuration-reference/#configuration-properties
+        src: 'app/less/style.less',
+        dest: 'app/css/style.css',
         options: {
-          css_dir: 'temp/styles',
-          sass_dir: 'app/styles',
-          images_dir: 'app/images',
-          javascripts_dir: 'temp/scripts',
-          force: true
+          compile: true
         }
       }
     },
@@ -44,25 +40,30 @@ module.exports = function( grunt ) {
       dest: ''
     },
 
+    // headless testing through PhantomJS
+    mocha: {
+      all: ['test/**/*.html']
+    },
+
     // default watch configuration
     watch: {
       coffee: {
-        files: 'app/scripts/**/*.coffee',
+        files: '<config:coffee.dist.src>',
         tasks: 'coffee reload'
       },
-      compass: {
+      recess: {
         files: [
-          'app/styles/**/*.{scss,sass}'
+          'app/less/**/*.less'
         ],
-        tasks: 'compass reload'
+        tasks: 'recess reload'
       },
       reload: {
         files: [
           'app/*.html',
-          'app/styles/**/*.css',
-          'app/scripts/**/*.js',
-          'app/views/**/*.html',
-          'app/images/**/*'
+          'app/css/**/*.css',
+          'app/js/**/*.js',
+          'app/img/**/*',
+          'app/views/**/*.html'
         ],
         tasks: 'reload'
       }
@@ -73,7 +74,7 @@ module.exports = function( grunt ) {
     lint: {
       files: [
         'Gruntfile.js',
-        'app/scripts/**/*.js',
+        'app/js/**/*.js',
         'spec/**/*.js'
       ]
     },
@@ -95,7 +96,7 @@ module.exports = function( grunt ) {
         browser: true
       },
       globals: {
-        angular: true
+        jQuery: true
       }
     },
 
@@ -118,15 +119,15 @@ module.exports = function( grunt ) {
 
     // concat css/**/*.css files, inline @import, output a single minified css
     css: {
-      'styles/main.css': ['styles/**/*.css']
+      'css/style.css': ['css/**/*.css']
     },
 
     // renames JS/CSS to prepend a hash of their contents for easier
     // versioning
     rev: {
-      js: 'scripts/**/*.js',
-      css: 'styles/**/*.css',
-      img: 'images/**'
+      js: 'js/**/*.js',
+      css: 'css/**/*.css',
+      //img: 'img/**'
     },
 
     // usemin handler should point to the file containing
@@ -148,7 +149,7 @@ module.exports = function( grunt ) {
 
     // Optimizes JPGs and PNGs (with jpegtran & optipng)
     img: {
-      dist: '<config:rev.img>'
+      dist: 'img/**'
     },
 
     // rjs configuration. You don't necessarily need to specify the typical
@@ -161,17 +162,33 @@ module.exports = function( grunt ) {
     rjs: {
       // no minification, is done by the min task
       optimize: 'none',
-      baseUrl: './scripts',
-      wrap: true
+      baseUrl: './js',
+      wrap: true,
+      name: 'main'
+    },
+
+    // While Yeoman handles concat/min when using
+    // usemin blocks, you can still use them manually
+    concat: {
+      dist: ''
+    },
+
+    min: {
+      dist: ''
     }
   });
 
   // Alias the `test` task to run `testacular` instead
-  grunt.registerTask('test', 'run the testacular test driver', function () {
+  grunt.registerTask('test', 'run the testacular test driver', function(){
     var done = this.async();
-    require('child_process').exec('testacular start --single-run', function (err, stdout) {
+    require('child_process').exec('testacular start --single-run', function(err, stdout){
       grunt.log.write(stdout);
       done(err);
     });
   });
+
+  // Alias the `compass` task to run the `recess` task instead
+  grunt.registerTask('compass', 'recess');
+
+
 };
