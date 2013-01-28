@@ -96,7 +96,16 @@ module.exports = function(grunt) {
         browser: true
       },
       globals: {
-        jQuery: true
+        $: true,
+        jQuery: true,
+        _: true,
+        klass: true,
+        angular: true,
+        Proximity: true,
+        ProximityApp: true,
+        console: true,
+        devLog: true,
+        _V_: true // videoJS global
       }
     },
 
