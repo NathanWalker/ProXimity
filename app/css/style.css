@@ -8719,9 +8719,14 @@ a.badge:hover {
     padding: 0;
   }
   .navbar .brand {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 14px 0 0 55px !important;
     margin: 0 0 0 -5px;
+    font-size: 25px !important;
+  }
+  .navbar .logo {
+    top: 0 !important;
+    left: -15px !important;
+    width: 80px !important;
   }
   .nav-collapse {
     clear: both;
