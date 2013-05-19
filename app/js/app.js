@@ -15,14 +15,14 @@ var ProximityApp = angular.module('SXProximityApp', ['ngResource', 'ngSanitize',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/products', {
-        templateUrl: 'views/products.html',
-        controller: 'ProductsCtrl'
-      })
-      .when('/blog', {
-        templateUrl: 'views/blog.html',
-        controller: 'BlogCtrl'
-      })
+      // .when('/products', {
+      //   templateUrl: 'views/products.html',
+      //   controller: 'ProductsCtrl'
+      // })
+      // .when('/blog', {
+      //   templateUrl: 'views/blog.html',
+      //   controller: 'BlogCtrl'
+      // })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -39,10 +39,10 @@ var ProximityApp = angular.module('SXProximityApp', ['ngResource', 'ngSanitize',
         templateUrl: 'views/privacy.html',
         controller: 'PrivacyCtrl'
       })
-      .when('/terms', {
-        templateUrl: 'views/terms.html',
-        controller: 'TermsCtrl'
-      })
+      // .when('/terms', {
+      //   templateUrl: 'views/terms.html',
+      //   controller: 'TermsCtrl'
+      // })
       .otherwise({
         redirectTo: '/'
       });
