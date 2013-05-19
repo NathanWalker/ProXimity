@@ -2,7 +2,7 @@ ProximityApp.directive('proxMenu', function(){
   var linkFn = function(scope, element, attrs){
     scope.$watch('global.menuEnabled()', function(val){
       if(val){
-        element.css('height', '275px');
+        element.css('height', '165px');
       } else {
         element.css('height', '0px');
       }
@@ -25,7 +25,7 @@ ProximityApp.directive('proxSwipe', function(){
       $dotsContainer = $swipeControls.find('div.dots-container');
     }
 
-    scope.$evalAsync(function(){
+    scope.global.$timeout(function(){
         if ($dotsContainer){
           $.each(element.find('.item'), function(index, value){
             var $dot = $('<a href="javascript:void(0)"></a>');
@@ -42,7 +42,7 @@ ProximityApp.directive('proxSwipe', function(){
           $swipeControls.insertAfter(element);
         }
 
-        scope.global.$timeout(function(){
+        
           swiper = new Swipe(document.getElementById(attrs.id), {
             auto:5000,
             callback: function(event, index, elem){
@@ -65,7 +65,7 @@ ProximityApp.directive('proxSwipe', function(){
               swiper.next();
             }
           });
-        }, 100);
+        
 
         if ($swipeControls){
           $swipeControls.find('a:not(.swipe-hint)').bind('click', function(){
@@ -74,7 +74,7 @@ ProximityApp.directive('proxSwipe', function(){
             swiper.slide($swipeControls.find('a').index($(this)));
           });
         }
-      });
+      }, 300);
   };
 
   return { restrict: 'A', link: linkFn };

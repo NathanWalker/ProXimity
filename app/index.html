@@ -10,8 +10,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>ProXimity by Saexa</title>
-  <meta name="author" content="ProXimity">
+  <title>SXProXimity by Saexa</title>
+  <meta name="author" content="SXProXimity">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -32,7 +32,7 @@
   <!--<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png">-->
 </head>
 
-<body ng-app="ProximityApp" ng-controller="SiteCtrl">
+<body ng-app="SXProximityApp" ng-controller="SiteCtrl">
 
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
@@ -55,13 +55,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" ng-click="changeRoute('/')">pro<span>X</span>imity</a>
+      <a class="brand" ng-click="changeRoute('/')">SXPro<span>X</span>imity</a>
       <img src="/img/logo.png" alt="proXimity" class="logo"/>
       <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
       <div class="nav-collapse collapse" prox-menu>
         <ul class="nav" style="float:right; text-align:right;">
-          <li ng-repeat="nav in headerLinks" ng-class="{active:nav.active}"><a ng-click="changeRoute(nav.link)">{{nav.label}}</a>
-          </li>
+          <li ng-repeat="nav in headerLinks" ng-class="{active:nav.active}"><a ng-click="changeRoute(nav.link)">{{nav.label}}</a></li>
           <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
           <!--<li class="dropdown">-->
           <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
@@ -88,7 +87,7 @@
 
 <!-- Carousel
 ================================================== -->
-<div id="myCarousel" class="carousel" ng-show="carouselActive()" prox-swipe>
+<div id="myCarousel" class="carousel" data-pause="hover" ng-show="carouselActive()" prox-swipe>
   <div class="carousel-inner">
     <div class="item active">
       <img src="/img/slide-01.jpg" alt="">
@@ -99,8 +98,11 @@
         <div class="carousel-caption">
           <h1>Exposure</h1>
 
-          <p class="lead">Information can be connected to reveal too much personal information.</p>
-          <a class="btn btn-large btn-primary" ng-click="showMsg('Coming soon!')">Learn more</a>
+          <p class="lead">Small pieces of information distributed across multiple social media outlets can add up to a disturbing amount of personal information.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" ng-click="changeRoute('/about', '1')">Learn more &hellip;</a>
+            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -111,8 +113,11 @@
         <div class="carousel-caption">
           <h1>Criminal Exposure</h1>
 
-          <p class="lead">This is all Rich. Fill this in.</p>
-          <a class="btn btn-large btn-primary" ng-click="showMsg('Coming soon!')">Learn more</a>
+          <p class="lead">Prevent stalkers and cyber bullies from accumulating enough information to target you or your family.  Use SXProXimity to manage your exposure.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" ng-click="changeRoute('/about', '3')">Learn more &hellip;</a>
+            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -123,8 +128,11 @@
         <div class="carousel-caption">
           <h1>Social Exposure</h1>
 
-          <p class="lead">This is all Rich. Fill this in.</p>
-          <a class="btn btn-large btn-primary" ng-click="showMsg('Coming soon!')">Learn more</a>
+          <p class="lead">Items posted to one audience may be embarrassing in other context. Use SXProXimity to manage your exposure.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" ng-click="changeRoute('/about', '3')">Learn more &hellip;</a>
+            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -135,8 +143,11 @@
         <div class="carousel-caption">
           <h1>Professional Exposure</h1>
 
-          <p class="lead">This is all Rich. Fill this in.</p>
-          <a class="btn btn-large btn-primary" ng-click="showMsg('Coming soon!')">Learn more</a>
+          <p class="lead">Don't let private comments cost you your next job.  70% of U.S. job recruiters have rejected candidates based on their online reputations. Use SXProXimity to manage your exposure.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" ng-click="changeRoute('/about', '3')">Learn more &hellip;</a>
+            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -159,8 +170,7 @@
   <footer>
     <p class="pull-right"><a href="javascript:void(0)" class="scrollToTop">Scroll To Top</a></p>
 
-    <p>&copy; 2012 ProXimity, Inc. &middot; <a ng-click="changeRoute('/privacy')">Privacy</a> &middot; <a
-      ng-click="changeRoute('/terms')">Terms</a></p>
+    <p>&copy; 2012 Saexa, LLC. &middot; <a ng-click="changeRoute('/privacy')">Privacy</a></p>
   </footer>
 </div>
 
@@ -169,7 +179,7 @@
 <script src="/js/vendor/json3.min.js"></script>
 <script src="/js/vendor/modernizr.min.js"></script>
 <script src="/js/vendor/jquery-1.8.3.min.js"></script>
-<script src="/js/vendor/lodash.min.js"></script>                å
+<script src="/js/vendor/lodash.min.js"></script>          
 <script src="/js/vendor/swipe.js"></script>
 <script src="/js/vendor/klass.min.js"></script>
 <script src="/js/vendor/video-js-custom.js"></script>
@@ -180,13 +190,15 @@
 <script src="/js/vendor/angular-ui.min.js"></script>
 <script src="/js/vendor/scope.onready.js"></script>
 <script src="/js/vendor/code.photoswipe.jquery-3.0.5.min.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-affix.js"></script>
+<script src="/js/vendor/ui-bootstrap-tpls-0.3.0.min.js"></script>
+<!-- <script src="/js/vendor/bootstrap/bootstrap-affix.js"></script>
 <script src="/js/vendor/bootstrap/bootstrap-button.js"></script>
 <script src="/js/vendor/bootstrap/bootstrap-carousel.js"></script>
 <script src="/js/vendor/bootstrap/bootstrap-collapse.js"></script>
+<script src="/js/vendor/bootstrap/bootstrap-scrollspy.js"></script>
 <script src="/js/vendor/bootstrap/bootstrap-dropdown.js"></script>
 <script src="/js/vendor/bootstrap/bootstrap-modal.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-transition.js"></script>
+<script src="/js/vendor/bootstrap/bootstrap-transition.js"></script> -->
 <script src="/js/proximity.js"></script>
 <script src="/js/vendor/lawnchair-0.6.1.js"></script>
 <script src="/js/app.js"></script>

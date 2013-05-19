@@ -1,29 +1,42 @@
 'use strict';
 
-ProximityApp.controller('SiteCtrl', ['$scope', '$location', 'GlobalService', function(s, $location, global){
+ProximityApp.controller('SiteCtrl', ['$scope', '$location', '$window', '$timeout', '$anchorScroll', 'GlobalService', function(s, $location, $window, $timeout, $anchorScroll, global){
   s.global = global;
   s.isHome = $location.path() == '/';
   s.headerLinks = [
     {label: 'Home', link: '/', active:true, useCarousel:true},
-    {label: 'Products', link: '/products', active: false, useCarousel: false},
-    {label: 'Blog', link: '/blog', active: false, useCarousel: false},
     {label: 'About', link: '/about', active: false, useCarousel: false},
     {label: 'Contact', link: '/contact', active: false, useCarousel: false}
   ];
 
-  s.changeRoute = function(route){
-    if(route !== undefined){
+  s.changeRoute = function(route, hash){
+    if(route){
       devLog('change route: ' + route);
 
-      $location.path(route);
-      s.isHome = route == '/';
-      _.forEach(s.headerLinks, function(l){
-        l.active = l.link == route;
-      });
-//      if(angular.element('.nav-collapse').hasClass('in')) {
-//        angular.element('.btn-navbar').trigger('click');
-//      }
-      s.toggleMenu(false);
+      if (_.isString(route) && route.indexOf('http') > -1) {
+        $window.location.href = route
+      } else {
+        $location.path(route);
+        s.isHome = route == '/';
+        _.forEach(s.headerLinks, function(l){
+          l.active = l.link == route;
+        });
+  //      if(angular.element('.nav-collapse').hasClass('in')) {
+  //        angular.element('.btn-navbar').trigger('click');
+  //      }
+        s.toggleMenu(false);  
+
+        if(hash){
+          $timeout(function(){
+            $location.hash(hash);
+            $anchorScroll();
+          }, 500);
+          
+        }
+      }
+      
+
+      
     }
   };
 
