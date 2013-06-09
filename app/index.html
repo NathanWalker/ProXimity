@@ -101,7 +101,7 @@
           <p class="lead">Small pieces of information distributed across multiple social media outlets can add up to a disturbing amount of personal information.</p>
           <div class="btn-row">
             <a class="btn btn-primary" ng-click="changeRoute('/about', '1')">Learn more &hellip;</a>
-            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+            <a appstore></a>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
           <p class="lead">Prevent stalkers and cyber bullies from accumulating enough information to target you or your family.  Use SXProXimity to manage your exposure.</p>
           <div class="btn-row">
             <a class="btn btn-primary" ng-click="changeRoute('/about', '3')">Learn more &hellip;</a>
-            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+            <a appstore></a>
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@
           <p class="lead">Items posted to one audience may be embarrassing in other context. Use SXProXimity to manage your exposure.</p>
           <div class="btn-row">
             <a class="btn btn-primary" ng-click="changeRoute('/about', '3')">Learn more &hellip;</a>
-            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+            <a appstore></a>
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@
           <p class="lead">Don't let private comments cost you your next job.  70% of U.S. job recruiters have rejected candidates based on their online reputations. Use SXProXimity to manage your exposure.</p>
           <div class="btn-row">
             <a class="btn btn-primary" ng-click="changeRoute('/about', '3')">Learn more &hellip;</a>
-            <a class="appstore-badge" href="http://www.apple.com" target="_blank"></a>
+            <a appstore></a>
           </div>
         </div>
       </div>
@@ -168,50 +168,42 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="pull-right"><a href="javascript:void(0)" class="scrollToTop">Scroll To Top</a></p>
+    <p class="pull-right"><a href="javascript:void(0)" class="scrollToTop" data-scroll-top-link>Scroll To Top</a></p>
 
     <p>&copy; 2012 Saexa, LLC. &middot; <a ng-click="changeRoute('/privacy')">Privacy</a></p>
   </footer>
 </div>
 
 <!-- build:js js/script.js -->
-<script src="/js/vendor/es5-shim.min.js"></script>
-<script src="/js/vendor/json3.min.js"></script>
-<script src="/js/vendor/modernizr.min.js"></script>
-<script src="/js/vendor/jquery-1.8.3.min.js"></script>
-<script src="/js/vendor/lodash.min.js"></script>          
-<script src="/js/vendor/swipe.js"></script>
-<script src="/js/vendor/klass.min.js"></script>
-<script src="/js/vendor/video-js-custom.js"></script>
-<script src="/js/vendor/detectmobilebrowser.min.js"></script>
-<script src="/js/vendor/angular.js"></script>
-<script src="/js/vendor/angular-resource.min.js"></script>
-<script src="/js/vendor/angular-sanitize.min.js"></script>
-<script src="/js/vendor/angular-ui.min.js"></script>
-<script src="/js/vendor/scope.onready.js"></script>
-<script src="/js/vendor/code.photoswipe.jquery-3.0.5.min.js"></script>
-<script src="/js/vendor/ui-bootstrap-tpls-0.3.0.min.js"></script>
-<!-- <script src="/js/vendor/bootstrap/bootstrap-affix.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-button.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-carousel.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-collapse.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-scrollspy.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-dropdown.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-modal.js"></script>
-<script src="/js/vendor/bootstrap/bootstrap-transition.js"></script> -->
-<script src="/js/proximity.js"></script>
-<script src="/js/vendor/lawnchair-0.6.1.js"></script>
-<script src="/js/app.js"></script>
-<script src="/js/services.js"></script>
-<script src="/js/directives.js"></script>
-<script src="/js/controllers/sitectrl.js"></script>
-<script src="/js/controllers/main.js"></script>
-<script src="/js/controllers/products.js"></script>
-<script src="/js/controllers/blog.js"></script>
-<script src="/js/controllers/about.js"></script>
-<script src="/js/controllers/contact.js"></script>
-<script src="/js/controllers/privacy.js"></script>
-<script src="/js/controllers/terms.js"></script>
+<script src="js/vendor/es5-shim.min.js"></script>
+<script src="js/vendor/json3.min.js"></script>
+<script src="js/vendor/modernizr.min.js"></script>
+<script src="js/vendor/jquery-1.8.3.min.js"></script>
+<script src="js/vendor/lodash.min.js"></script>          
+<script src="js/vendor/swipe.js"></script>
+<script src="js/vendor/klass.min.js"></script>
+<script src="js/vendor/video-js-custom.js"></script>
+<script src="js/vendor/detectmobilebrowser.min.js"></script>
+<script src="js/vendor/angular.js"></script>
+<script src="js/vendor/angular-resource.min.js"></script>
+<script src="js/vendor/angular-sanitize.min.js"></script>
+<script src="js/vendor/angular-ui.min.js"></script>
+<script src="js/vendor/scope.onready.js"></script>
+<script src="js/vendor/code.photoswipe.jquery-3.0.5.min.js"></script>
+<script src="js/vendor/ui-bootstrap-tpls-0.3.0.min.js"></script>
+<script src="js/proximity.js"></script>
+<script src="js/vendor/lawnchair-0.6.1.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/controllers/sitectrl.js"></script>
+<script src="js/controllers/main.js"></script>
+<script src="js/controllers/products.js"></script>
+<script src="js/controllers/blog.js"></script>
+<script src="js/controllers/about.js"></script>
+<script src="js/controllers/contact.js"></script>
+<script src="js/controllers/privacy.js"></script>
+<script src="js/controllers/terms.js"></script>
 <!-- endbuild -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -241,11 +233,7 @@
           $('.scrollToTop').fadeOut();
         }
       });
-      //Click event to scroll to top
-      $('.scrollToTop').click(function(){
-        $('html, body').animate({scrollTop: 0}, 500);
-        return false;
-      });
+
     });
   }(window.jQuery)
 </script>

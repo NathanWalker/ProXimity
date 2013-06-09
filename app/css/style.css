@@ -8696,6 +8696,18 @@ a.badge:hover {
   }
 }
 
+@media (max-width: 320px) {
+  .navbar .logo {
+    left: -15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo {
+    left: -15px !important;
+  }
+}
+
 @media (max-width: 979px) {
   body {
     padding-top: 0;
@@ -8725,7 +8737,6 @@ a.badge:hover {
   }
   .navbar .logo {
     top: 0 !important;
-    left: -15px !important;
     width: 80px !important;
   }
   .nav-collapse {

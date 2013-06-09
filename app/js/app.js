@@ -46,4 +46,17 @@ var ProximityApp = angular.module('SXProximityApp', ['ngResource', 'ngSanitize',
       .otherwise({
         redirectTo: '/'
       });
+  }]).run(['$rootScope', 'GlobalService', function($rootScope, global){
+    $rootScope.safeApply = function(fn) {
+      var phase;
+
+      phase = this.$root.$$phase;
+      if (phase !== "$apply" && phase !== "$digest") {
+        return $rootScope.$apply(fn);
+      }
+    };
+
+    $rootScope.showMsg = function(msg){
+      global.alertMsg(msg);
+    };
   }]);

@@ -12,6 +12,50 @@ ProximityApp.directive('proxMenu', function(){
   return { restrict: 'A', link: linkFn };
 });
 
+ProximityApp.directive('scrollTopLink', ['$location', '$rootScope', function($location, $rootScope){
+  var link = function(scope, element, attrs){
+    //Click event to scroll to top
+    element.bind('click', function(){
+      $rootScope.safeApply(function(){
+        $location.hash('');
+      });
+      
+      $('html, body').animate({scrollTop: 0}, 500);
+      return false;
+    });
+  };
+
+  return { restrict: 'A', link: link };
+
+}]);
+
+// CHANGE APPSTORE BADGE LINK in HERE
+ProximityApp.directive('appstore', ['$rootScope',  function($rootScope){
+  var link = function(scope, element, attrs){
+    var today = new Date();
+    if(today.getMonth() >= 5 && today.getDate() >= 17 && today.getFullYear() >= 2013){
+      // release date :)
+      element.attr('href', 'https://itunes.apple.com/us/app/sxproximity/id627348605?ls=1&mt=8');
+      element.attr('target', '_blank');
+    } else{
+      element.bind('click', function(){
+        $rootScope.safeApply(function(){
+          $rootScope.showMsg('Coming soon to an app store near you on June 17!');
+        });
+        
+      });
+    }
+  };
+
+  return { 
+    restrict: 'A', 
+    replace:true,  
+    template:'<a class="appstore-badge"></a> ',
+    link: link 
+  };
+
+}]);
+
 ProximityApp.directive('proxSwipe', function(){
   var linkFn = function(scope, element, attrs){
     var swiper; // initialized below

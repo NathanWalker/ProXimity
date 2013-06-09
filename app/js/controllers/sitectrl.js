@@ -51,10 +51,6 @@ ProximityApp.controller('SiteCtrl', ['$scope', '$location', '$window', '$timeout
 
   };
 
-  s.showMsg = function(msg){
-    s.global.alertMsg(msg);
-  };
-
   s.carouselActive = function(){
     var activeRoute = _.find(s.headerLinks, function(l){
       return l.link == $location.path();
