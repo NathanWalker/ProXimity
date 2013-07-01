@@ -1,4 +1,4 @@
-var ProximityApp = angular.module('SXProximityApp', ['ngResource', 'ngSanitize', 'ui', 'Scope.onReady'])
+var ProximityApp = angular.module('SXProximityApp', ['ngResource', 'ngSanitize', 'ui.utils', "ui.bootstrap"])
   .config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
   if (Proximity.prop.platform.IS_LEGACY_ANDROID || Proximity.prop.platform.IS_LEGACY_IE){
     // FULL SITE DOES NOT NEED HTML5 History API support because we don't use $routeProvider
