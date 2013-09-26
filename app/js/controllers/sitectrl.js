@@ -3,10 +3,30 @@
 ProximityApp.controller('SiteCtrl', ['$scope', '$location', '$window', '$timeout', '$anchorScroll', 'GlobalService', function(s, $location, $window, $timeout, $anchorScroll, global){
   s.global = global;
   s.isHome = $location.path() == '/';
+  s.myInterval = 6000;
   s.headerLinks = [
     {label: 'Home', link: '/', active:true, useCarousel:true},
     {label: 'About', link: '/about', active: false, useCarousel: false},
     {label: 'Contact', link: '/contact', active: false, useCarousel: false}
+  ];
+
+  s.slides = [
+    {
+      active:true,
+      view:'views/carousel/1.html'
+    },
+    {
+      active:false,
+      view:'views/carousel/2.html'
+    },
+    {
+      active:false,
+      view:'views/carousel/3.html'
+    },
+    {
+      active:false,
+      view:'views/carousel/4.html'
+    }
   ];
 
   s.changeRoute = function(route, hash){
@@ -24,19 +44,19 @@ ProximityApp.controller('SiteCtrl', ['$scope', '$location', '$window', '$timeout
   //      if(angular.element('.nav-collapse').hasClass('in')) {
   //        angular.element('.btn-navbar').trigger('click');
   //      }
-        s.toggleMenu(false);  
+        s.toggleMenu(false);
 
         if(hash){
           $timeout(function(){
             $location.hash(hash);
             $anchorScroll();
           }, 500);
-          
+
         }
       }
-      
 
-      
+
+
     }
   };
 

@@ -19,7 +19,7 @@ ProximityApp.directive('scrollTopLink', ['$location', '$rootScope', function($lo
       $rootScope.safeApply(function(){
         $location.hash('');
       });
-      
+
       $('html, body').animate({scrollTop: 0}, 500);
       return false;
     });
@@ -42,21 +42,21 @@ ProximityApp.directive('appstore', ['$rootScope',  function($rootScope){
         $rootScope.safeApply(function(){
           $rootScope.showMsg('Coming soon to an app store near you on June 17!');
         });
-        
+
       });
     }
   };
 
-  return { 
-    restrict: 'A', 
-    replace:true,  
+  return {
+    restrict: 'A',
+    replace:true,
     template:'<a class="appstore-badge"></a> ',
-    link: link 
+    link: link
   };
 
 }]);
 
-ProximityApp.directive('proxSwipe', function(){
+ProximityApp.directive('proxSwipe', ['$timeout', function($timeout){
   var linkFn = function(scope, element, attrs){
     var swiper; // initialized below
     var options = attrs.proxSwipe ? attrs.proxSwipe.split(':') : [];
@@ -69,7 +69,7 @@ ProximityApp.directive('proxSwipe', function(){
       $dotsContainer = $swipeControls.find('div.dots-container');
     }
 
-    scope.global.$timeout(function(){
+    $timeout(function(){
         if ($dotsContainer){
           $.each(element.find('.item'), function(index, value){
             var $dot = $('<a href="javascript:void(0)"></a>');
@@ -78,15 +78,17 @@ ProximityApp.directive('proxSwipe', function(){
             }
             $dotsContainer.append($dot);
           });
+
+          if (controlsPosition == 'top'){
+            $swipeControls.insertBefore(element);
+          } else if (controlsPosition == 'bottom'){
+            $swipeControls.insertAfter(element);
+          }
         }
 
-        if (controlsPosition == 'top'){
-          $swipeControls.insertBefore(element);
-        } else if (controlsPosition == 'bottom'){
-          $swipeControls.insertAfter(element);
-        }
 
-        
+
+
           swiper = new Swipe(document.getElementById(attrs.id), {
             auto:5000,
             callback: function(event, index, elem){
@@ -109,7 +111,7 @@ ProximityApp.directive('proxSwipe', function(){
               swiper.next();
             }
           });
-        
+
 
         if ($swipeControls){
           $swipeControls.find('a:not(.swipe-hint)').bind('click', function(){
@@ -122,4 +124,4 @@ ProximityApp.directive('proxSwipe', function(){
   };
 
   return { restrict: 'A', link: linkFn };
-});
+}]);
